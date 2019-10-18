@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "276203566697",
+    "firebase_url": "https://beteasier.firebaseio.com",
+    "project_id": "beteasier",
+    "storage_bucket": "beteasier.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276203566697:android:d957bc5c108ffdc088d4f8",
+        "android_client_info": {
+          "package_name": "com.example.beteasier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276203566697-7esd9m11fgm7n0p29nmvfl4fl8gc5oeg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_3NQdOKAUsHFkFfACJc2jbxdwcAFBLm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276203566697-7esd9m11fgm7n0p29nmvfl4fl8gc5oeg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

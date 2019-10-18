@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+     <item
+         android:title="Home"
+         android:id="@id/home"
+         android:icon="@drawable/ic_home"
+         android:menuCategory="secondary"/>
+
+    <item
+        android:title="Matches"
+        android:id="@id/matches"
+        android:icon="@drawable/ic_matches"
+        android:menuCategory="secondary"/>
+
+    <item
+        android:title="Search"
+        android:id="@id/search"
+        android:icon="@drawable/ic_search"
+        android:menuCategory="secondary"/>
+
+    <item
+            android:title="Bets"
+            android:id="@id/bets"
+            android:icon="@drawable/ic_eurosign"
+            android:menuCategory="secondary"/>
+
+</menu>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.beteasier.mainFragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/matches"
+        android:name="com.example.beteasier.mainFragments.MatchesFragment"
+        android:label="Matches"
+        tools:layout="@layout/fragment_matches" />
+
+    <fragment
+        android:id="@+id/search"
+        android:name="com.example.beteasier.mainFragments.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+            android:id="@+id/bets"
+            android:name="com.example.beteasier.mainFragments.BetsFragment"
+            android:label="Bets"
+            tools:layout="@layout/fragment_bets" />
+
+    <fragment
+            android:id="@+id/statistics"
+            android:name="com.example.beteasier.mainFragments.StatisticsFragment"
+            android:label="Statistics"
+            tools:layout="@layout/fragment_statistics" />
+
+    <fragment
+            android:id="@+id/account"
+            android:name="com.example.beteasier.mainFragments.AccountFragment"
+            android:label="Account"
+            tools:layout="@layout/fragment_account" />
+
+    <fragment
+            android:id="@+id/support"
+            android:name="com.example.beteasier.mainFragments.SupportFragment"
+            android:label="Support"
+            tools:layout="@layout/fragment_support" />
+
+</navigation>

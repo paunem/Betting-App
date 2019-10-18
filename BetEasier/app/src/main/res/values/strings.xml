@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NavigationComponentWithBottomNavigationAndDrawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_blank_fragment">home blank fragment</string>
+    <string name="matches_blank_fragment">matches blank fragment</string>
+    <string name="search_blank_fragment">search blank fragment</string>
+    <string name="bets_blank_fragment">bets blank fragment</string>
+    <string name="statistics_blank_fragment">statistics blank fragment</string>
+    <string name="support_blank_fragment">support blank fragment</string>
+    <string name="account_blank_fragment">account blank fragment</string>
+</resources>
