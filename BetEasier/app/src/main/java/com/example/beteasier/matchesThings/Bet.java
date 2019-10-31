@@ -1,17 +1,19 @@
 package com.example.beteasier.matchesThings;
 
 public class Bet {
-private String teamName1, teamName2, date, time, rate1, rate2, category, userId;
+private String teamName1, teamName2, date, time, amount, category, userId;
+private double rate1, rate2;
 
     public Bet(){}
 
-    public Bet(String teamName1, String teamName2, String date, String time, String rate1, String rate2, String category, String userId) {
+    public Bet(String teamName1, String teamName2, String date, String time, double rate1, double rate2, String amount, String category, String userId) {
         this.teamName1 = teamName1;
         this.teamName2 = teamName2;
         this.date = date;
         this.time = time;
         this.rate1 = rate1;
         this.rate2 = rate2;
+        this.amount = amount;
         this.category = category;
         this.userId = userId;
     }
@@ -32,12 +34,16 @@ private String teamName1, teamName2, date, time, rate1, rate2, category, userId;
         return time;
     }
 
-    public String getRate1() {
+    public double getRate1() {
         return rate1;
     }
 
-    public String getRate2() {
+    public double getRate2() {
         return rate2;
+    }
+
+    public String getAmount() {
+        return amount;
     }
 
     public String getCategory() {

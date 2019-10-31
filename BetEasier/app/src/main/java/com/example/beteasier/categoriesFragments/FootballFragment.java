@@ -1,4 +1,4 @@
-package com.example.beteasier.mainFragments;
+package com.example.beteasier.categoriesFragments;
 
 
 import android.os.Bundle;
@@ -11,24 +11,22 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.beteasier.R;
-import com.example.beteasier.matchesThings.Bet;
-import com.example.beteasier.matchesThings.BetAdapter;
+import com.example.beteasier.matchesThings.Match;
+import com.example.beteasier.matchesThings.MatchAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 
-public class BetsFragment extends Fragment {
+public class FootballFragment extends Fragment{
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference dbRef = db.collection("Bets");
+    private CollectionReference dbRef = db.collection("Matches");
 
-    private BetAdapter adapter;
+    private MatchAdapter adapter;
 
-
-    public BetsFragment() {
+    public FootballFragment() {
         // Required empty public constructor
     }
 
@@ -37,7 +35,7 @@ public class BetsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bets, container, false);
+        return inflater.inflate(R.layout.fragment_football, container, false);
     }
 
     @Override
@@ -47,15 +45,15 @@ public class BetsFragment extends Fragment {
     }
 
     private void setUpRecyclerView(View view) {
-        Query query = dbRef.whereEqualTo("userId", FirebaseAuth.getInstance().getCurrentUser().getUid()).orderBy("date", Query.Direction.ASCENDING).orderBy("time", Query.Direction.ASCENDING);
+        Query query = dbRef.whereEqualTo("category", "Football").whereEqualTo("status", "1").orderBy("date", Query.Direction.ASCENDING).orderBy("time", Query.Direction.ASCENDING);
 
-        FirestoreRecyclerOptions<Bet> options = new FirestoreRecyclerOptions.Builder<Bet>()
-                .setQuery(query, Bet.class)
+        FirestoreRecyclerOptions<Match> options = new FirestoreRecyclerOptions.Builder<Match>()
+                .setQuery(query, Match.class)
                 .build();
 
-        adapter = new BetAdapter(options);
+        adapter = new MatchAdapter(options);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_view_bets);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view_football);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);

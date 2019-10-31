@@ -11,6 +11,8 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 
+import java.util.Locale;
+
 
 public class BetAdapter extends FirestoreRecyclerAdapter<Bet, BetAdapter.NoteHolder> {
     private OnItemClickListener listener;
@@ -26,8 +28,9 @@ public class BetAdapter extends FirestoreRecyclerAdapter<Bet, BetAdapter.NoteHol
         holder.textViewBetCategory.setText(model.getCategory());
         holder.textViewBetDate.setText(model.getDate());
         holder.textViewBetTime.setText(model.getTime());
-        holder.textViewRate1.setText(model.getRate1());
-        holder.textViewRate2.setText(model.getRate2());
+        holder.textViewRate1.setText(String.format(Locale.getDefault(),"%.2f", model.getRate1()));
+        holder.textViewRate2.setText(String.format(Locale.getDefault(),"%.2f", model.getRate2()));
+        holder.textViewAmount.setText(model.getAmount());
     }
 
     @NonNull
@@ -47,6 +50,8 @@ public class BetAdapter extends FirestoreRecyclerAdapter<Bet, BetAdapter.NoteHol
         TextView textViewBetTime;
         TextView textViewRate1;
         TextView textViewRate2;
+        TextView textViewAmount;
+        TextView textViewEuro;
 
         public NoteHolder(View itemView) {
             super(itemView);
@@ -58,16 +63,8 @@ public class BetAdapter extends FirestoreRecyclerAdapter<Bet, BetAdapter.NoteHol
             textViewBetTime = itemView.findViewById(R.id.text_view_betTime);
             textViewRate1 = itemView.findViewById(R.id.text_view_rate1);
             textViewRate2 = itemView.findViewById(R.id.text_view_rate2);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION && listener != null) {
-                        listener.onItemClick(getSnapshots().getSnapshot(position), position);
-                    }
-                }
-            });
+            textViewAmount = itemView.findViewById(R.id.text_view_betAmount);
+            textViewEuro = itemView.findViewById(R.id.text_view_euro);
         }
 
 

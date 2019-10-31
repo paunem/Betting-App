@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void storeUserData(){
         if(mFirebaseAuth.getCurrentUser() != null) {
-            User user = new User("", "", mFirebaseAuth.getCurrentUser().getEmail(), "");
+            User user = new User("", "", mFirebaseAuth.getCurrentUser().getEmail(), "", 1);
             db.collection("Users").document(mFirebaseAuth.getCurrentUser().getUid()).set(user);
         }
     }

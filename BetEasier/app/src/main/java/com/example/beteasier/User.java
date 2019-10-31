@@ -2,12 +2,14 @@ package com.example.beteasier;
 
 public class User {
     private String name, surname, email, country;
+    private double balance;
 
-    public User(String name, String surname, String email, String country) {
+    public User(String name, String surname, String email, String country, double balance) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.country = country;
+        this.balance = balance;
     }
 
     public void setName(String name) {
@@ -26,6 +28,10 @@ public class User {
         this.country = country;
     }
 
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     public String getName() {
         return name;
     }
@@ -40,5 +46,9 @@ public class User {
 
     public String getCountry() {
         return country;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 }
